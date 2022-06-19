@@ -1,12 +1,13 @@
 /*set variables*/
 :root {
-    --fontcolor: blue;  
+    --fontcolor-dark: rgb(40,40,92);
+    --fontcolor-light: aqua;  
 }
 
 header {
     display: flex;
     height: 50px;
-    background-color: rgb(40, 40, 92);
+    background-color: var(--fontcolor-dark);
     align-items: center;
     justify-content: space-between;
     padding-right: 10%;
@@ -15,6 +16,7 @@ header {
 
 body {
     background-color: rgb(159, 204, 246);
+    color: var(--fontcolor-dark)
 }
 
 ul {
@@ -26,21 +28,57 @@ ul {
     float: left;
     display:block;
     background-color: aqua;
-    color: var(--fontcolor);
+    color: var(--fontcolor-dark);
     padding-left: 50px;
     padding-right: 10px;
     padding-bottom: 3px;
     padding-top: 3px;
 }
 .nav-bar {
-    color:aqua;
+    color: var(--fontcolor-dark);
     float:right;
+    white-space: nowrap;
 }
 
 .nav-item {
     display: inline-block;
-    color: aqua;
+    color: var(--fontcolor-light);
     padding: 1%;
+    border-bottom: 3px solid var(--fontcolor-light);
+}
+
+a {
+    color: var(--fontcolor-light);
+    text-decoration: none;
+}
+
+.hero {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("https://via.placehold.com/728x200");
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--fontcolor-dark);
+}
+
+.hero-tag {
+    float: right;
+    margin-top: 125px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    background-color: var(--fontcolor-light);
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+}
+
+.contact-item {
+    display: inline-block;
+    color: var(--fontcolor-dark);
+    padding: 1%;
+    border-bottom: 3px solid var(--fontcolor-dark);
 }
 
 .sidebar {
@@ -51,7 +89,7 @@ ul {
     width: 20%;
     height: auto;
     padding-left: 10%;
-    border-right: 3px solid rgb(40, 40, 92);
+    border-right: 3px solid var(--fontcolor-dark);
 }
 
 .about-me {
