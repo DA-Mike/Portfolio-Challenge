@@ -1,0 +1,98 @@
+/*set variables*/
+:root {
+    --fontcolor: blue;  
+}
+
+header {
+    display: flex;
+    height: 50px;
+    background-color: rgb(40, 40, 92);
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(159, 204, 246);
+}
+
+ul {
+    width:max-content;
+
+}
+
+.name {
+    float: left;
+    display:block;
+    background-color: aqua;
+    color: var(--fontcolor);
+    padding-left: 50px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.nav-bar {
+    color:aqua;
+    float:right;
+}
+
+.nav-item {
+    display: inline-block;
+    color: aqua;
+    padding: 1%;
+}
+
+.sidebar {
+    display: flex;
+    float: left;
+    margin-left: 20px;
+    padding: 20px;
+    width: 20%;
+    height: auto;
+    padding-left: 10%;
+    border-right: 3px solid rgb(40, 40, 92);
+}
+
+.about-me {
+    float: right;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox-container > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-width: 5px;
+  }
+
+.content-row {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10%;
+    margin: 3%;
+}
+
+.content {
+    float: right;
+}
+
+
+
+/* media query for larger screens 
+@media screen and (min-width: 992px) {
+    header {
+      width: 75%;
+
+    }
+}*/
