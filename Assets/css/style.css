@@ -131,7 +131,8 @@ img {
 
 .profile-pic{
     float:left;
-    padding: 3%;
+    margin: 3%;
+    border: 3px solid var(--fontcolor-dark)
 }
 
 .flexbox-container {
@@ -153,6 +154,25 @@ img {
     font-size: 30px;
     border-width: 5px;
 }
+
+.flexbox-image img {
+    border: 3px solid var(--fontcolor-dark);
+    transition: all 0.5s ease-in-out;
+}
+
+.flexbox-image img {
+    box-shadow: inset 0px 0px 3px var(--fontcolor-dark), 0 0 6px var(--fontcolor-dark);
+}
+
+.code-card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .code-card:hover,
+  .code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+  }
 
 .content-row {
     display: grid;
@@ -176,13 +196,13 @@ img {
 
 }
 
-/*media query for larger screens*/
-@media screen and (min-width: 992px) {
+/*media query for larger screens
+@media screen and (min-width: 451px) {
     header {
       width: 100%;
 
     }
-}
+}*/
 
 @media screen and (max-width: 450px) {
     header {
