@@ -3,11 +3,11 @@
     --fontcolor-dark: rgb(40,40,92);
     --fontcolor-light: aqua;  
     --hero-height: 200px;
+    --border-color: rgb(5,141,252);
 }
 
 /*element selectors*/
 header {
-    /*display: flex;*/
     height: 5rem;
     background-color: var(--fontcolor-dark);
     align-items: center;
@@ -98,7 +98,7 @@ footer {
 }
 
 .nav-item:hover {
-    text-shadow:2px 2px 5px rgb(5, 141, 252);
+    text-shadow:2px 2px 5px var(--border-color);
 }
 
 .hero {
@@ -167,7 +167,7 @@ footer {
 
 .flexbox-image,
 .profile-pic {
-    border: 3px solid rgb(5, 141, 252);
+    border: 3px solid var(--border-color);
     transition: all 0.5s ease-in-out;
 }
 
@@ -175,16 +175,6 @@ footer {
 .profile-pic:hover {
     box-shadow: inset 0px 0px 3px var(--fontcolor-dark), 0 0 8px var(--fontcolor-dark);
 }
-
-.code-card .card-header {
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .code-card:hover,
-  .code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
-  }
 
 .content-row {
     display: grid;
