@@ -2,38 +2,81 @@
 :root {
     --fontcolor-dark: rgb(40,40,92);
     --fontcolor-light: aqua;  
+    --hero-height: 200px;
 }
 
+/*element selectors*/
 header {
-    display: flex;
-    height: 50px;
+    /*display: flex;*/
+    height: 5rem;
     background-color: var(--fontcolor-dark);
     align-items: center;
     justify-content: space-between;
     padding-right: 10%;
     width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+a {
+    color: var(--fontcolor-light);
+    text-decoration: none;
 }
 
 body {
     background-color: rgb(159, 204, 246);
-    color: var(--fontcolor-dark)
+    color: var(--fontcolor-dark);
 }
 
-ul {
-    width:max-content;
+main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 1%; 
+    padding: 1%;
+}
 
+h1 {
+    margin: 1%;
+    padding-right: 2%;
+    font-size: 200%;
+}
+
+h2 {
+    margin-right: 2%;
+    font-size: 200%;
+}
+
+p {
+    text-align: center;
+    padding: 3%;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*class selectors*/
+.nav-bar ul {
+    margin-right: 7%;
+    float: right;
+}
+
+.contact-bar ul {
+    padding-left: 3%;
 }
 
 .name {
     float: left;
+    text-align: right;
     display:block;
     background-color: aqua;
     color: var(--fontcolor-dark);
-    padding-left: 50px;
-    padding-right: 10px;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    padding-left: 5%;
+    padding-right: 1%;;
+    padding-bottom: .3%;
+    padding-top: .3%;
 }
+
 .nav-bar {
     color: var(--fontcolor-dark);
     float:right;
@@ -45,33 +88,29 @@ ul {
     color: var(--fontcolor-light);
     padding: 1%;
     border-bottom: 3px solid var(--fontcolor-light);
-}
-
-a {
-    color: var(--fontcolor-light);
-    text-decoration: none;
+    margin: 3%;
 }
 
 .hero {
-    height: 200px;
+    height: var(--hero-height);
     width: 100%;
-    margin-bottom: 25px;
-    background-image: url("https://via.placehold.com/728x200");
+    margin-bottom: 2.5%;
+    background-image: url("https://via.placeholder.com/728x200");
     background-size: cover;
     background-position: center;
-    border: 3px solid var(--fontcolor-dark);
+    border-bottom: 3px solid var(--fontcolor-dark);
 }
 
 .hero-tag {
     float: right;
-    margin-top: 125px;
-    margin-right: 50px;
-    margin-bottom: 25px;
+    margin-top: 8%;
+    margin-right: 10%;
+    margin-bottom: 2.5%;
     background-color: var(--fontcolor-light);
     height: fit-content;
     width: fit-content;
     text-align: center;
-    padding: 5px;
+    padding: .5%;
 }
 
 .contact-item {
@@ -79,40 +118,45 @@ a {
     color: var(--fontcolor-dark);
     padding: 1%;
     border-bottom: 3px solid var(--fontcolor-dark);
+    margin-inline-end: 14%;
 }
 
 .sidebar {
-    display: flex;
-    float: left;
-    margin-left: 20px;
-    padding: 20px;
-    width: 20%;
+    margin-left: 1%;
+    padding: 2%;
     height: auto;
-    padding-left: 10%;
-    border-right: 3px solid var(--fontcolor-dark);
+    text-align: right;
+    margin-right: 1%;
 }
 
-.about-me {
-    float: right;
+.profile-pic{
+    float:left;
+    padding: 3%;
 }
 
 .flexbox-container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 2%;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
 }
 
 .flexbox-container > div {
     background-color: #f1f1f1;
-    width: 100px;
+    width: fit-content;
     margin: 10px;
     text-align: center;
-    line-height: 75px;
+    height:fit-content;
     font-size: 30px;
     border-width: 5px;
-  }
+}
 
 .content-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 80%;
     width: 100%;
     height: fit-content;
     align-items: center;
@@ -123,14 +167,79 @@ a {
 
 .content {
     float: right;
+    border-left: 3px solid var(--fontcolor-dark);
 }
 
+.contact-bar {
+    display: inline;
+    white-space: nowrap;
 
+}
 
-/* media query for larger screens 
+/*media query for larger screens*/
 @media screen and (min-width: 992px) {
     header {
-      width: 75%;
+      width: 100%;
 
     }
-}*/
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: none;
+        
+    }
+    .name {
+        display: none;
+
+    }
+    
+    .nav-bar {
+        float: left;
+        margin-right: 10%;
+    }
+
+    .nav-bar ul {
+       float:none;
+    }
+
+    .nav-item {
+        font-size: 80%;
+    }
+
+    .contact-bar ul {
+       display: grid;
+       grid-template-rows: auto;
+       justify-content: center;
+       margin-inline-end: 0%;
+       margin-right: 0;
+    }
+
+    .contact-item {
+        border: none;
+    }
+
+    .hero {
+        display: none;
+    }
+
+    h2 {
+        font-size: 100%;
+    }
+
+    .about-me {
+        display:grid;
+        grid-template-rows: 75% 25%;
+        align-items: center;       
+    }
+
+    p {
+        text-align: left;
+    }
+
+    .profile-pic {
+        margin-left: 17%;
+    }
+}
