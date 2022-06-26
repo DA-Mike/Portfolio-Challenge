@@ -83,18 +83,18 @@ footer {
 }
 
 /*navigation bar*/
-.nav-bar ul {
+.navbar ul {
     margin-right: 7%;
     float: right;
 }
 
-.nav-bar {
+.navbar {
     color: var(--fontcolor-dark);
     float:right;
     white-space: nowrap;
 }
 
-.nav-item {
+.navbar__item {
     display: inline-block;
     color: var(--fontcolor-light);
     padding: 1%;
@@ -103,7 +103,7 @@ footer {
     transition: all 0.5s ease-in-out;
 }
 
-.nav-item:hover {
+.navbar--hover:hover {
     text-shadow:2px 2px 5px var(--border-color);
 }
 
@@ -118,7 +118,7 @@ footer {
     border-bottom: 3px solid var(--fontcolor-dark);
 }
 
-.hero-tag {
+.hero__tag {
     float: right;
     margin-top: 8%;
     margin-right: 10%;
@@ -131,7 +131,7 @@ footer {
 }
 
 /*creates and styles grid for each row*/
-.content-row {
+.content {
     display: grid;
     grid-template-columns: 20% 80%;
     width: 100%;
@@ -143,12 +143,12 @@ footer {
 }
 
 /*grid border between row header and content*/
-.content {
+.content__row {
     border-left: 3px solid var(--fontcolor-dark);
 }
 
 /*styles grid row headers*/
-.sidebar {
+.content__sidebar {
     margin-left: 1%;
     padding: 2%;
     height: auto;
@@ -157,14 +157,14 @@ footer {
 }
 
 /*profile pic in about me row*/
-.profile-pic{
+.aboutme__pic{
     float:left;
     margin: 3%;
     border: 3px solid var(--fontcolor-dark)
 }
 
 /*creates and styles flexboxes in work row*/
-.flexbox-container {
+.fbox-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -172,22 +172,24 @@ footer {
     width: fit-content;
     height: fit-content;
     justify-content: center;
-    /* margin: 10px; */
  }
 
-.flexbox-container > * {
-    width: fit-content;
-    margin: 1%;
-    height:fit-content;
+.fbox-container > .image2 .image3 .image4 .image5 {
+    flex-basis: 47%;
     border-width: 5px;
 }
 
-.flexbox-image {
+.fbox-container > * {
+    margin: 1%;
+    border-width: 5px;
+}
+
+.fbox-container__image {
     position: relative;
 }
 
 /* adds overlay fading effect */
-.flexbox-image:after {
+.fbox-container__image:after {
     position:absolute;
     display: block;
     height: 100%;
@@ -204,22 +206,22 @@ footer {
    opacity: 1;
   }
 
-  .flexbox-image img {
+  .fbox-container__image img {
     width: 100%;
   }
 
-  .flexbox-image:after {
+  .fbox-container__image:after {
     opacity: 0.3;
   }
- .flexbox-image:after {
+ .fbox-container__image:after {
     background-color: var(--background-color-light);
   }
-  .flexbox-image:hover:after {
+  .fbox-container__image:hover:after {
     opacity: 0;
   }
 
 /* Flexbox title elements */
-.box-title {
+.fbox__title {
     background-color: var(--background-color-light);
     color: var(--fontcolor-dark);
     padding: 3%;
@@ -230,31 +232,42 @@ footer {
     font-size: 100%;
 }
 
-.box-title p {
+.fbox__title p {
     font-size: 50%;
 }
 
 /*makes box borders glow*/
-.flexbox-image,
-.profile-pic {
+.fbox-container__image,
+.aboutme__pic {
     border: 3px solid var(--border-color);
     transition: all 0.5s ease-in-out;
 }
 
-.flexbox-image:hover,
-.profile-pic:hover {
+.fbox-container__image:hover,
+.aboutme__pic:hover {
     box-shadow: inset 0px 0px 3px var(--fontcolor-dark), 0 0 8px var(--fontcolor-dark);
 }
 
+/*makes boxes grow*/
+.flexbox--grow {
+    transition: all .2s ease-in-out;
+}
+
+.flexbox--grow:hover {
+    transform: scale(1.1);
+    z-index: 5;
+}
+
+
 /*styles contact me row*/
-.contact-item {
+.contactbar__item {
     display: table-cell;
     color: var(--fontcolor-dark);
     padding: 1%;
     text-align: center;
 }
 
-.contact-bar a{
+.contactbar a{
     display: block;
     color: var(--fontcolor-dark);
     padding: 1%;
@@ -262,26 +275,41 @@ footer {
     text-underline-offset: 5px;
 }
 
-.contact-bar ul {
+.contactbar ul {
     display: table;
     width: 100%;
     list-style: none;
     padding-left: 3%;
 }
 
-.contact-bar {
+.contactbar {
     display: inline;
     white-space: nowrap;
-
 }
 
-/*media query for larger screens
-@media screen and (min-width: 451px) {
-    header {
-      width: 100%;
+/*Floating Back-To-Top Button*/
+/*Code found at https://stackoverflow.com/questions/32102747/how-to-make-a-back-to-top-button-using-css-and-html-only#:~:text=Utilize%20the%20tag.,an%20anchor%20with%20specified%20name.&text=Then%20your%20%22back%20to%20top%22%20link%20points%20to%20it.*/
+#myBtn {
+    position: fixed;
+    bottom: 10px;
+    float: right;
+    right: 5%;
+    left: 95%;
+    max-width: 50px;
+    width: 100%;
+    font-size: 12px;
+    border-color: rgba(85, 85, 85, 0.2);
+    background-color: rgb(100,100,100);
+    padding: .5px;
+    border-radius: 4px;
+    opacity: 65%;
+}
 
-    }
-}*/
+/*On Hover Color Change*/
+#myBtn:hover {
+    background-color: #7dbbf1;
+}
+
 
 /*media query for smaller screens*/
 @media screen and (max-width: 450px) {
@@ -301,16 +329,16 @@ footer {
     }
     
     /*centers and modifies nav bar*/
-    .nav-bar {
+    .navbar {
         float: left;
         margin-right: 10%;
     }
 
-    .nav-bar ul {
+    .navbar ul {
        float:none;
     }
 
-    .nav-item {
+    .navbar__item {
         font-size: 80%;
     }
 
@@ -320,7 +348,7 @@ footer {
     }
 
     /*stacks contact info vertically*/
-    .contact-bar ul {
+    .contactbar ul {
        display: grid;
        grid-template-rows: auto;
        justify-content: center;
@@ -328,7 +356,7 @@ footer {
        margin-right: 0;
     }
 
-    .contact-item a {
+    .contactbar__item a {
         text-decoration: none;
     }
 
@@ -337,30 +365,31 @@ footer {
         font-size: 100%;
     }
 
+    p {
+        text-align: left;
+    }
+
     h3 {
         font-size: 50%;
     }
 
-     /*reconfigures about me row*/
-    .about-me {
+     /*reconfigures about me section*/
+    .aboutme {
         display:grid;
         grid-template-rows: 70% 30%;
         align-items: center;
     }
 
-    p {
-        text-align: left;
-    }
-
-    .box-title p {
-        font-size: 45%;
-    }
-
-    .profile-pic {
+    .aboutme__pic {
         margin-left: 20%;
     }
 
-    .flexbox-container {
+    /*reconfigures work section*/
+    .fbox__title p {
+        font-size: 45%;
+    }
+
+    .fbox-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
