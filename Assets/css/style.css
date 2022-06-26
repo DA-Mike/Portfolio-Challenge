@@ -213,9 +213,11 @@ footer {
   .fbox-container__image:after {
     opacity: 0.3;
   }
- .fbox-container__image:after {
+ 
+  .fbox-container__image:after {
     background-color: var(--background-color-light);
   }
+  
   .fbox-container__image:hover:after {
     opacity: 0;
   }
