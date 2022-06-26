@@ -260,7 +260,6 @@ footer {
     z-index: 5;
 }
 
-
 /*styles contact me row*/
 .contactbar__item {
     display: table-cell;
@@ -288,6 +287,7 @@ footer {
 .contactbar {
     display: inline;
     white-space: nowrap;
+    padding: 1%;
 }
 
 /*Floating Back-To-Top Button*/
