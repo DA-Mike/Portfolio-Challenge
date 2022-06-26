@@ -157,10 +157,11 @@ footer {
 }
 
 /*profile pic in about me row*/
-.aboutme__pic{
+.aboutme__pic {
     float:left;
     margin: 3%;
-    border: 3px solid var(--fontcolor-dark)
+    border: 3px solid var(--fontcolor-dark);
+    background-color: var(--background-color-light);
 }
 
 /*creates and styles flexboxes in work row*/
