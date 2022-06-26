@@ -278,10 +278,11 @@ footer {
 }
 
 .contactbar ul {
-    display: table;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
     width: 100%;
-    list-style: none;
     padding-left: 3%;
+    justify-content: space-evenly;
 }
 
 .contactbar {
