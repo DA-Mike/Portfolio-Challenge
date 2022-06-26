@@ -145,6 +145,7 @@ footer {
 /*grid border between row header and content*/
 .content__row {
     border-left: 3px solid var(--fontcolor-dark);
+    padding: 1%;
 }
 
 /*styles grid row headers*/
