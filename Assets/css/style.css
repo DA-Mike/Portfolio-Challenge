@@ -186,6 +186,7 @@ footer {
 
 .fbox-container__image {
     position: relative;
+    background-color: var(--background-color-light);
 }
 
 /* adds overlay fading effect */
